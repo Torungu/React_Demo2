@@ -10,6 +10,7 @@ const Content = () => {
     }
   };
   const findGlass = searchGlass(glass);
+  console.log(findGlass);
   return (
     <div className="container mx-auto">
       <div className="mx-auto py-5 grid grid-cols-2 w-1/2">
@@ -23,14 +24,21 @@ const Content = () => {
           <img src={glass} alt="" className=" w-full mx-auto h-auto" />
           <div className="bg-white mt-20">
             <div>
-              <h3 className="font-bold">Name: {findGlass.name}</h3>
+              <h3 className="font-bold">
+                Name: {findGlass ? findGlass.name : "GUCCI G8850U"}
+              </h3>
               <p className="font-bold">
                 Price:{" "}
                 <span className="text-green-600 font-bold">
-                  {findGlass.price} $
+                  {findGlass ? findGlass.price : 30} $
                 </span>
               </p>
-              <p>Desc: {findGlass.desc}</p>
+              <p>
+                Desc:{" "}
+                {findGlass
+                  ? findGlass.desc
+                  : "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. "}
+              </p>
             </div>
           </div>
         </div>
